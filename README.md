@@ -9,3 +9,5 @@ The following files included in this repository are adapted from an open-source 
 Original source:  
 👉 https://github.com/Wendyfff0616/USYD-Learning-Notes  
 Author: **Wendy**
+
+- `Introduction to the Theory of Computation` is authored by **Bowen Deng** from the University of Science and Technology of China
