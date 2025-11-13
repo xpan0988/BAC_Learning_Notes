@@ -429,5 +429,141 @@ Loop Coverage: Each loop runs
 
 ##### Week6:
 
+Tips:
+
+primary measure of progress is Working software
+
+use CI/CD pipelines to frequently integrate
+
+**Continuous Integration(CI)**:merging working copies to a shared mainline at least daily, automated builds and tests to catch issues early
+
+
+
+**Continuous Delivery(CD)**: extends CI through automated deployment, software could be released at any time
+
+
+
+**Continuous Deployment:** – every change automatically passes all tests without human intervention
+
+
+
+**DevOps Culture:** CI/CD is part of the broader DevOps movement, shortening the software lifecycle (faster releases)
+
+Collaboration: share ownership
+
+Automation: eliminate manual errors, speed up delivery
+
+Infrastructure as Code (IaC): Manage with code scripts
+
+Monitoring \& Feedback: detect issues, inform the next iterations
+
+
+
+**Continuous Integration Practices:**
+
+Frequent Commits: at least once a day, reduces integration,changes are bite-sized
+
+Automated Build \& Test(integration tests): CI server monitors the repository, get feedback within minutes
+
+Fail Fast and Fix: never leave the build broken,  ensures a deployable mainline
+
+Pre-merge Checks: prevents breaking main altogether
+
+Artifact Storage:archives build artifacts(compiled binaries, Docker images, etc.)test results
+
+
+
+**Deployment Pipeline (Continuous Delivery):** 
+
+Commit stage (CI build): run unit tests (fast feedback).
+
+Automated acceptance tests: extensive tests (integration tests, UI tests, API tests)
+
+Deploy to staging/UAT: Perform user acceptance/performance tests or security scans here
+
+Production deployment:  Continuous Delivery  is manual,  Continuous Deployment is automatic
+
+ensures software is always in releasable state
+
+
+
+**Key CI/CD Concepts**:
+
+Never go home on a broken build: fix it or rollback
+
+Small batches: Integrating small changes often (reduces risk)
+
+Deployment Automation: s eliminate manual errors
+
+Rollbacks: previous version artifacts/use blue-green deployment strategies
+
+
+
+**Jenkins:** Multiple stages, Parallel execution, Integration with tools, Plugins ecosystem
+
+
+
+measure: 
+
+Build duration (low). 
+
+Deployment frequency (release). 
+
+Change lead time (commit to production). 
+
+Change failure rate (percentage of releases cause incidents). 
+
+MTTR (time to recover from failure).
+
+
+
+
+
+##### Week7:
+
+Tips:
+
+4-5 learning people can each experienced person on an agile team permit
+
+Effective teamwork comprises Right tools, right people, right practices
+
+Software development is a team effort, Team dynamics refer psychological forces
+
+Teamwork in Agile: emphasis on individuals, cross-functional, self-organizing teams, Scrum teams are meant to be self-organizing and cross functional, Agile principle: Business people and developers work together daily
+
+
+
+**Common Team Problems**: classic “throw it over the wall” isolation, without collaboration, all roles in one team with shared goals, Whole-team mindset is needed
+
+
+
+**Tuckman’s Stages of Team Development:**
+
+Forming: meets and forms initial relationships. Reliance for guidance, roles not clear
+
+Storming: conflicts arise over approaches. Power struggles, challenge of ideas, clarity of purpose increases 
+
+Norming: norms and harmonious. roles and relationships clear, begin trust each other
+
+Performing: well-oiled machine.: high trust, autonomous, focuses on goals
+
+
+
+**Productive vs Unproductive Conflict**: Productive leading to better solutions, Unproductive hurts morale and progress
+
+setting team working agreements/conflict resolution training/having retrospective.
+
+
+
+**Identifying and Resolving Team Issues**: confidential interviews or open retrospectives, improve via: Changes composition/role definitions. Team-building exercises or workshops. Addressing work environment issues. Training on cultural differences
+
+
+
+Team Culture (Dev vs Ops vs Test): cross-functional teams, blameless post-mortems, empathy across roles.
+
+
+
+
+
 
 
