@@ -228,7 +228,7 @@ Organizations and Teams: an organization can own repositories and manage members
 
 four main Configuration Management (CM) activities are System building, Version management, Change management, Release management
 
-main inputs to an automated build system are Source code, configuration files, data files, libraries, and compilers 
+main inputs to an automated build system are Source code, configuration files, data files, libraries, and compilers
 
 increment the MAJOR version when make incompatible API changes
 
@@ -322,7 +322,7 @@ Testing is the primary method of software verification(meets requirements and is
 
 **Testing Fundamentals**: Who: Developers (unit tests), dedicated QA/testers, end-users (acceptance/beta testing). When: In waterfall, testing is a distinct late phase, ; in agile, testing is continuous, and automated tests run frequently
 
-**Testing Levels**: 
+**Testing Levels**:
 
 Unit Testing: Verify individual components, Usually done by developers
 
@@ -360,7 +360,7 @@ Error Guessing/Guidelines: : Leverage experience or common bug patterns
 
 
 
-**Test Automation Goals**: Improve quality by catching bugs early (every code change triggers tests). Serve as executable 
+**Test Automation Goals**: Improve quality by catching bugs early (every code change triggers tests). Serve as executable
 
 specifications(readable, describe behaviour)
 
@@ -376,7 +376,47 @@ Minimize maintenance cost: tests should be reliable
 
 **Testing Patterns and Smells**:test design patterns and test design patterns(common problems in test code)
 
+**Test Organization Patterns**: one test class per production class or per feature, use test fixtures, use descriptive test names and clear assertions 
 
+**Test Double Patterns**:
+
+Dummy: passed around but not used 
+
+Stubs: Provide canned responses
+
+Mocks: Verifies interactions
+
+Fake: Simplified working implementations
+
+Spy: Records how it was used for later verification
+
+**Test Smells**:
+
+Fragile Tests: fail after minor code changes, over-specification
+
+Assertion Roulette: fails it’s unclear(Multiple assertions in a test with no messages)
+
+Flaky Tests: sometimes pass/fail
+
+High Maintenance Tests: t need frequent updates when code changes
+
+Developers Not Writing Tests: schedule pressure, lack of skill or discouragement
+
+
+
+**Code Coverage**: evaluate how much is exercised by tests
+
+Statement Coverage: % of statements executed by tests
+
+Branch Coverage: % of branches (if/else)
+
+Condition Coverage: % of Boolean
+
+Loop Coverage: Each loop runs
+
+
+
+**Testing in Agile**:  test automation/practices like TDD/Continuous Testing
 
 
 
