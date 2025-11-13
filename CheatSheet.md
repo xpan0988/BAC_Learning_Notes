@@ -316,6 +316,13 @@ Release Management: preparing software for release (packaging, release notes, ve
 
 ##### Week5:
 
+Tips:
+Software Quality is determined by software testing(A process to demonstrate that software meets user needs,Find incorrect or undesired behaviour)
+
+Defective testing finds bugs, validation testing verifies correct behavior
+
+
+
 Testing is the primary method of software verification(meets requirements and is defect-free)
 
 **Why Testing Matters**:n cause huge financial loss, endanger lives, improves quality, catching defects before deployment, reduces risk
@@ -376,11 +383,11 @@ Minimize maintenance cost: tests should be reliable
 
 **Testing Patterns and Smells**:test design patterns and test design patterns(common problems in test code)
 
-**Test Organization Patterns**: one test class per production class or per feature, use test fixtures, use descriptive test names and clear assertions 
+**Test Organization Patterns**: one test class per production class or per feature, use test fixtures, use descriptive test names and clear assertions
 
 **Test Double Patterns**:
 
-Dummy: passed around but not used 
+Dummy: passed around but not used
 
 Stubs: Provide canned responses
 
@@ -417,6 +424,10 @@ Loop Coverage: Each loop runs
 
 
 **Testing in Agile**:  test automation/practices like TDD/Continuous Testing
+
+
+
+##### Week6:
 
 
 
