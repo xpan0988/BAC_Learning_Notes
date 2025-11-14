@@ -473,7 +473,7 @@ Artifact Storage:archives build artifacts(compiled binaries, Docker images, etc.
 
 
 
-**Deployment Pipeline (Continuous Delivery):** 
+**Deployment Pipeline (Continuous Delivery):**
 
 Commit stage (CI build): run unit tests (fast feedback).
 
@@ -503,15 +503,15 @@ Rollbacks: previous version artifacts/use blue-green deployment strategies
 
 
 
-measure: 
+measure:
 
-Build duration (low). 
+Build duration (low).
 
-Deployment frequency (release). 
+Deployment frequency (release).
 
-Change lead time (commit to production). 
+Change lead time (commit to production).
 
-Change failure rate (percentage of releases cause incidents). 
+Change failure rate (percentage of releases cause incidents).
 
 MTTR (time to recover from failure).
 
@@ -541,7 +541,7 @@ Teamwork in Agile: emphasis on individuals, cross-functional, self-organizing te
 
 Forming: meets and forms initial relationships. Reliance for guidance, roles not clear
 
-Storming: conflicts arise over approaches. Power struggles, challenge of ideas, clarity of purpose increases 
+Storming: conflicts arise over approaches. Power struggles, challenge of ideas, clarity of purpose increases
 
 Norming: norms and harmonious. roles and relationships clear, begin trust each other
 
@@ -563,7 +563,221 @@ Team Culture (Dev vs Ops vs Test): cross-functional teams, blameless post-mortem
 
 
 
+##### Week8:
+
+Scrum is a popular agile framework, Sprints(typically 2–4 weeks), Scrum defines specific roles, events, and artifacts. Sprint Goal provides focus
 
 
 
+**Scrum Roles**:
+
+Product Owner (PO): “voice of the customer”, Represents the stakeholder/customer interests. Owns the Product Backlog, ensures the team is building the most valuable features first, define user stories, set priorities, accept completed work.
+
+Development Team: Cross-functional group(3–9),  Self-organizing: how to accomplish work each Sprint, cross-functional: collectively they have all skills needed,  No sub-teams or roles
+
+Scrum Master: Servant-leader and coach, Ensures Scrum is understood and enacted, : remove impediments blocking
+
+the team, facilitate, coach, shield and help improve processes, helping with backlog grooming
+
+
+
+**Scrum Events**:
+
+Sprint:max a month, commonly 2 week, no gaps, s. Scope may be clarified/re-negotiated, additions,  requirements are frozen for that Sprint
+
+
+
+Sprint Planning: max 8 hours for a one-month, Attendees: PO,
+
+Part 1(4h max): What PO top Product Backlog stories and value, team select based on priority, short statement for Sprint goal.
+
+Part 2: How Dev Team breaks  Product Backlog story into tasks, Output: Sprint Backlog(stories + the plan), Daily Scrum/Stand-up: 15-minute daily meeting, solution discussed after stand-up
+
+Sprint Review: end of the Sprint 2–4 hours for monthly sprint,  **The PO accepts backlog that meet the Def of Done**.
+
+Sprint Retrospective: After the review, team reflects on the process and team dynamics, 3 hours for month sprint,
+
+well/improved  **The SM ensures positive and productive**,
+
+
+
+**Scrum Artifacts:**
+
+Product Backlog: The single, ordered list of everything, PO Managed, dynamic, items(User Story), ordered by value, risk, priority, top for higher, never “complete” until the product is done
+
+Burndown Chart: track remaining effort/updated daily by SM
+
+
+
+##### Week9:
+
+Tips:
+
+Epic is Larger bodies of work that can be broken into smaller tasks
+BDD need Requirements that everyone expects but don't need writing down 
+
+**User Stories**: “As a \[user role], I want \[goal] so that \[reason].keeping the value in focus.team agree a story is considered “done.”Acceptance Criteria written in Given-When-Then format,
+
+**Breaking Down Stories into Tasks**:a day or less of work, members sign up to do them, update board frequently
+
+**Sprint Execution \& Task Board Usage**: each developer picks tasks to in-progress, communicate in Daily Scrum if blocked or bigger, members might swarm together on one story
+
+**Unfinished Stories**: not meeting DoD, cannot be counted as done or shown in review
+
+
+
+**Lo-Fi UI \& Storyboards**: Simple hand-drawn screens/wireframes, cheap, quick to make, and help clarify require, get feedback
+
+**High-Fidelity (Hi-Fi) UI Prototypes**: More detailed, closer to actual design, take more time, move to hifi if basic design is validated
+
+**Scenarios and Storyboards**: Scenario is \[brief description]; GIVEN \[context] WHEN \[event] THEN \[outcome]  user accomplishes task in the system, Storyboard(visual sequence of panels)
+
+
+
+**Story Refinement \& SMART Criteria:**
+INVEST(Independent, Negotiable, Valuable, Estimable, Small, Testable)
+
+SMART(Specific, Measurable, Achievable, Relevant, Time-bound)
+
+
+
+Sprint Planning Revisited: Sprint Planning to emphasize value-based selection, team estimating effort to commit, PO must prepare by backlog grooming
+
+
+
+During the Sprint:Communication is key. The Daily Scrum covered, expects transparency
+
+
+
+Definition of Done (DoD) and Quality: code reviewed or unit tests written, test stories within the sprint
+
+
+
+##### Week10:
+
+Tips:
+
+Fibonacci series work well(It reflects uncertainty - bigger stories are fuzzier)
+
+Story Points:  unit of measure, relative size of user story, Story points not tied specific time, Story points are relative, not tied to a specific time
+
+Calibrating Story Points: establish a baseline story: Small story = 1 point; medium ~5
+
+Why Story Points (benefits): simple and teams control the scale, when using days/hours Avoids precision fallacy, Points encourage team estimation, shared understand
+
+
+
+Ideal Days vs Story Points:Ideal days means Elapsed days is real calendar time(each ideal day is different), story points avoid that by normalizing differences, Ideal days easier when starting, 
+
+
+
+Planning Poker (Estimation Technique):everyone agrees, is estimate, high and low estimators explain reasoning, then re-vote, Repeat until narrow agreement is reached, combines expert opinion, analogy, helps avoid 
+
+anchoring
+
+
+
+Velocity: rate at which the team delivers value, measured in story points per Sprint, Sum of all backlog story points / velocity = number of sprints 
+
+
+
+Planning in Agile vs Waterfall: Agile planning is incremental, full Gantt chart upfront, agile does high-level estimates with velocity and then continuously reprioritizes and re-estimates each Sprint
+
+
+
+
+Week12:
+---
+
+Software Engineering Ethics: ACM, IEEE Computer Society, and ACS (Australian Computer Society)
+
+General Ethical Principles: public good, no harm, honesty, fairness, respect for privacy, confidentiality
+
+Professional Responsibilities:  high quality, maintain competence, know/follow laws, respect intellectual property, accept/provide appropriate review, give evaluations of systems risks, perform only in your area
+
+
+
+Leadership Principles: promote ethical approach, ensure sustainable development, consider social impacts of systems
+
+
+
+The IEEE-CS/ACM Software Engineering Code of Ethics (SE Code) 8 Principles: Public, Client \& Employer, Product, Judgment, Management, Profession, Colleagues, Self
+
+
+
+ACS Code of Professional Conduct: Primacy of Public Interest, Enhancement of Quality of Life, Honesty, Competence, Professional Development, Professionalism
+
+
+
+Ethical Scenarios: engineer should consider the client’s interest and the honesty principle
+
+
+
+Privacy and Data Ethics: ensure user data privacy, guard confidentiality
+
+
+
+Intellectual Property (IP):
+
+Copyright: Legal right of the creator of original works to control copying, distribution, derivative works. code is automatically copyrighted, covers expression, not ideas/algorithms
+
+Patents: Protect inventions(algorithms or techniques)~20 years, require novelty and non-obviousness
+
+
+
+Patent vs copyright: copyright protects code (expression), patent protects ideas/functional concepts. patent grants are needed in open source licenses
+
+
+
+Trade Secrets: kept company to maintain advantage. Protected by confidentiality
+
+Trademarks: Protect brand names, logos
+
+
+
+Open-Source Software (OSS): use, modification, and distribution under license
+
+
+
+Open Source Licenses: 
+
+Permissive Licenses(MIT, Apache, BSD)
+
+MIT License: short and permissive.do whatever you want; include copyright and license notice; no liability or warranty
+
+Apache License 2.0:Permissive but with protections must include original copyright/license notices, has an explicit patent grant, allows distributing modified code under different terms
+
+BSD License (2-clause, 3-clause):Similar to MIT: minimal requirements, disclaimer of liability. 3-clause adds non-endorsement clause
+
+Mozilla Public License (MPL) 2.0: A weak copyleft file level copyleft, can combine with proprietary files
+
+
+
+Copyleft (Strong) Licenses: GNU GPL, distribute modified then release the source under the same license
+
+GPL v3:contains GPL’d code/ derived from it, must be licensed as GPL v3 and accompanied by source code, has  has patent grants
+
+
+
+LGPL (Lesser GPL): weaker copyleft intended for libraries, allows linking to the library, released under LGPL/GPL
+
+AGPL (Affero GPL): provide source to those users on request,  ensures freedom even in web services usage.
+
+
+
+“The Unlicense” and public domain: public domain (no copyright). do whatever without attribution
+
+
+
+Using Open Source in Projects: use GPL code may be obligated to open source your whole app, permissive licensed components (MIT, Apache) to avoid contamination.
+
+
+
+Contributing to Open Source: OSS project, contributions are licensed under the project’s license
+
+Ethical Use of Code: must attribute and comply
+
+
+
+Additional Ethics Topics: Privacy, AI Ethics, Professionalism, Cybersecurity
 
