@@ -1,0 +1,442 @@
+\documentclass[8pt]{extarticle}
+
+\usepackage[a4paper,landscape,margin=2mm]{geometry}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\setlength{\columnsep}{0.45cm}
+\setlength{\parindent}{0pt}
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{1.3pt}
+\renewcommand{\arraystretch}{0.86}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\h}[1]{\vspace{1pt}\textbf{#1}\par}
+\newcommand{\trap}{\textbf{Trap:} }
+\newcommand{\exam}{\textbf{Exam:} }
+\newcommand{\use}{\textbf{Use:} }
+\newcommand{\avoid}{\textbf{Avoid:} }
+
+\begin{document}
+\tiny
+\begin{center}
+\textbf{INFO2222 Usability + Security Exam Sheet} \quad
+MAQ: judge each option independently; no unsupported guessing; 4pt Qs = conservative.
+\end{center}
+\vspace{-5pt}
+\begin{multicols*}{5}
+
+\h{Exam Strategy / Do Not Overlearn}
+\begin{itemize}
+  \item MAQ: mark only options you can justify by concept + assumption.
+  \item Absolutes: always/never/cannot/only/must = suspect unless definition-level.
+  \item Boundary check: mechanism? property? attacker? assumption? user behaviour?
+  \item Do not overlearn: no sketching; no brainstorming phase lists; no exact angles/frequencies; no t-test calculations; no Fitts' equation.
+  \item Learn: concepts, pros/cons, method choice, UCD application, scenario reasoning.
+\end{itemize}
+
+\h{Core Chains}
+\textbf{UCD:} users/context $\to$ data gathering $\to$ themes $\to$ reqs $\to$ personas/scenarios $\to$ alternatives $\to$ lo/hi-fi prototype $\to$ evaluation $\to$ iterate.\\
+\textbf{Security analysis:} asset $\to$ attacker/capability $\to$ threat $\to$ vuln $\to$ CIA impact $\to$ control $\to$ residual risk/usability cost.\\
+\textbf{Usable security:} security benefit + user burden + likely workaround + safer default + clear feedback/recovery.
+
+\h{Usability Goals}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Goal & Meaning & Sec angle\\ \midrule
+Effect & complete accurately & secure task succeeds\\
+Efficiency & low effort/time & friction acceptable\\
+Safety & avoid/recover errors & no mis-send/leak\\
+Utility & right functions & real controls\\
+Learnability & new user succeeds & warnings/MFA clear\\
+Memorability & return easily & secure flow remembered\\
+\bottomrule
+\end{tabularx}
+
+\h{Human Factors / Accessibility}
+Attention/perception/memory affect warnings/labels/steps. WCAG: perceivable, operable, understandable, robust.
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Concept & Exam handling & Trap\\ \midrule
+Fitts & $D/W$ = target geometry; $a,b$ vary by device/user/sys & memorise equation\\
+Recall/recognition & CLI recalls commands; menus/GUI recognise & CLI easier for all\\
+Interact style & cmd: instruct; Q\&A: converse; object: manip.; browse: explore; prompt: respond & CLI = style\\
+Access & perm/temp/sit: visual, hearing, motor, cog, stress, noise, mobile & colour, memory, jargon only\\
+\bottomrule
+\end{tabularx}
+
+\h{Evaluation Method Selection}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Method & Best when & Trap/clues\\ \midrule
+Usability test & users do tasks & task success; not survey/expert review\\
+Think-aloud & mental model, why & verbalise; do not teach/lead\\
+Experiment & compare variants & IV/DV; no t-test calc\\
+Field study & real context & natural use; less control\\
+Heuristic eval & expert principles & no users; not task proof\\
+Cognitive walkthrough & first-use steps & discover; assumptions\\
+Inspection & checklist review & fast; can miss real users\\
+Analytics/models & logs/patterns & logs do not explain motives\\
+\bottomrule
+\end{tabularx}
+
+\h{Evaluation Templates}
+\textbf{Usability eval:} goal; participants; tasks; method; data (success/time/errors/comments); procedure/ethics; findings; redesign.\\
+\textbf{Think-aloud:} realistic task + ask to speak + prompt ``keep talking'' + observe; no teaching.\\
+\textbf{Experiment:} hypothesis; IV; DV; controls; participants; within/between; counterbalance; validity.\\
+\textbf{Concrete task:} tell goal not steps. Good: find yesterday's step count / last month's avg steps. Bad: click History then Yesterday. Vague: explore steps.
+
+\h{Prototype / Design}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+ & Lo-fi & Hi-fi\\ \midrule
+Use & ideas/flow/concept & realistic interaction\\
+Cost & cheap/changeable & costly, attachment risk\\
+Tests & task path, metaphor, layout & wording, visual hierarchy, friction\\
+Sec use & permission concept & warning/MFA/cert states\\
+Trap & rough $\ne$ bad & polished $\ne$ usable/secure\\
+\bottomrule
+\end{tabularx}
+Persona = evidence-based user type with goals/tasks/pain points. Scenario = user pursuing goal in context. Requirement $\ne$ feature wish.
+
+\h{Data Gathering}
+Interviews: open = exploratory; structured = consistent; semi-structured = planned+follow-up. Thematic analysis: notes $\to$ codes $\to$ themes $\to$ reqs/features. Recruit target users: USyd UI $\to$ USyd volunteers; campus bystanders $\ne$ necessarily students.
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Boundary & Correct use & Trap\\ \midrule
+Early reqs & ask goals, context, practice & solution-led feature Qs\\
+Known alts & ask easier/preferred + why & all preference Qs = leading\\
+\bottomrule
+\end{tabularx}
+
+\h{CIA + Security Vocabulary}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Term & Meaning & Trap\\ \midrule
+Confid. & no unauth disclosure & not correctness\\
+Integrity & no unauth change/tamper & encryption alone not enough\\
+Avail. & service usable by authorised users & DoS is security\\
+Threat & potential cause/attacker/event & not same as weakness\\
+Vuln & exploitable weakness & not just bad outcome\\
+Risk & likelihood $\times$ impact & needs context\\
+\bottomrule
+\end{tabularx}
+
+\h{Password Storage / Hashes}
+Hash = one-way verify; encryption = reversible. Store salted slow hashes; never plaintext. TLS protects transit; MFA helps after theft.
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Item & Stored/secret & Purpose/trap\\ \midrule
+Salt & DB; not secret & per-user anti-rainbow; weak pw still guessable\\
+Pepper & outside DB; secret & extra DB-breach protection; do not store by hash\\
+Weak accts & users $\times$ weak\% & don't use total if targeting weak group\\
+Worst/exp. & accts $\times$ dict; exp. $\approx$ accts $\times$ dict$/2$ & last vs average guess\\
+\bottomrule
+\end{tabularx}
+
+\h{Rainbow Tables}
+Precompute hash/reduction chains; storage-for-time tradeoff for likely passwords. Useful when hash setup/keyspace reusable. Salt breaks reuse across users. Not examinable code; know concept.
+
+\h{Crypto Boundaries}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Boundary & Left & Right/trap\\ \midrule
+Hash/encrypt & one-way verify & reversible confidentiality\\
+Sym/asym & shared secret; fast & public/private; identity issue\\
+PKE/signature & encrypt to pubkey & sign with private key\\
+MAC/signature & shared secret auth & public verification\\
+TLS/E2EE & client-server channel & endpoint content; server may see TLS plaintext\\
+Authn/authz & prove identity & permission decision\\
+\bottomrule
+\end{tabularx}
+
+\h{Symmetric / OTP}
+Symmetric encryption: same secret key; efficient bulk confidentiality. Does not solve key distribution/auth/integrity. OTP perfect secrecy iff uniformly random, msg-length, secret, one-time key. Uniform-looking $\ne$ unpredictable: small deterministic state can be learned. ``condition if violated'' = positive req; ``bad situation'' = reuse/not random. \trap encryption alone not auth.
+
+\h{Public Key / DH / MITM}
+PKE: public key encrypts; private key decrypts; costlier than SE; use SE/AE for bulk data, PKE/DH/certs for key exchange, identity, small data. Need certs/fingerprints/trust. DH: derive shared secret; unauth DH $\to$ MITM. Bad/non-primitive generator $\to$ small subgroup/subgroup confinement; not same as computing private keys; not same as MITM. \trap DH alone does not authenticate.
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+DH item & Meaning & Trap\\ \midrule
+Hardness & discrete log: given $g,p,A=g^a$, find $a$ & normal log/division fails\\
+Secret & $A=g^a$, $B=g^b$, shared $=B^a=A^b=g^{ab}\bmod p$ & not $g^{a+b}$\\
+Toy recovery & small $p$: brute-force $a$ until $g^a\equiv A$ & Fermat not direct solve\\
+\bottomrule
+\end{tabularx}
+
+\h{MAC / HMAC / Signature / AE}
+MAC/HMAC: shared secret verifies integrity + authenticity among holders; verifier can also create MAC. Digital signature: private signs, public verifies; public verifiability. Authenticated encryption: confidentiality + integrity; reject tampered ciphertext before plaintext use. \trap encryption-only $\ne$ integrity; MAC $\ne$ signature.
+
+\h{Authentication Stack}
+Identification = claim identity; authentication = verify; authorization = allowed action; accountability = trace action. Password/token/biometric = factors; MFA combines know/have/are. MFA helps stolen password risk; does not eliminate phishing/push fatigue/recovery issues. Biometrics not easily changed; accessibility/privacy concerns. \trap logged-in $\ne$ authorised.
+
+\h{TLS / HTTPS / Certs}
+TLS: server authentication via certificate + key exchange + symmetric session protection. HTTPS = HTTP over TLS. Protects network channel from eavesdrop/MITM if cert validation correct. Does not protect from malicious server, endpoint malware, wrong recipient, or server seeing plaintext. Cert validation: chain, host, validity, trust anchor. Pinning/hardcoded CA: reduces some MITM but update/recovery risk. \trap accepting self-signed/disabled validation kills TLS guarantee.
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+TLS part & Role & Trap\\ \midrule
+Handshake & server auth + key negotiation before secrets & not bulk app transfer\\
+Record & fragment + encrypt + integrity for app data & not cert validation\\
+Heartbeat & keep-alive/liveness & Heartbleed abused length\\
+Server auth & CA cert + chain, host, date, trust + private-key proof & not login auth\\
+\bottomrule
+\end{tabularx}
+
+\h{E2EE}
+E2EE encrypts at sender endpoint, decrypts at recipient endpoint; server/intermediary should not read content. Does not hide all metadata, fix compromised endpoints, verify identity automatically, or stop forwarding screenshots/plaintext. Usability: key verification/device-change warnings must be understandable and rare enough to matter.
+
+\h{Attack Map}
+\begin{tabularx}{\linewidth}{@{}lYYY@{}}
+\toprule
+Attack & Cause & CIA & Mitigation\\ \midrule
+SQLi & input becomes SQL & C/I/A & prepared stmts; least privilege\\
+XSS & input rendered as script & C/I & output encoding, sanitise, CSP\\
+Inference & combine aggregates & C/privacy & views, noise, overlap limits, audit\\
+SYN flood & half-open TCP table & A & SYN cookies; timeouts; filtering\\
+DoS/DDoS & resource exhaustion & A & scale; filter; rate limit\\
+Heartbleed & unchecked heartbeat length & C & patch, bounds check, rotate keys\\
+\bottomrule
+\end{tabularx}
+CSRF: not confirmed focus in provided materials; background only.
+
+\h{Inference Attack Pattern}
+Attacker is legitimate aggregate user + prior knowledge + repeated/overlapping accepted queries. Small-result rejection alone insufficient. Example: accepted sums over sets differing by target $\Rightarrow$ subtract to infer target salary. Mitigate: safe views/granularity, query auditing, noise/partial disclosure, overlap limits.
+
+\h{SQLi vs XSS}
+SQLi executes in DB query context; often server-side data impact. XSS executes in browser/page context; steals tokens, acts as user, changes content. SQLi best answer: parameterised queries. XSS best answer: context-aware output encoding + sanitisation/CSP. \trap ``use HTTPS'' does not fix SQLi/XSS.
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Input & Control & Trap\\ \midrule
+HTML/script text & encode; sanitise; CSP & raw render\\
+SQL-like text & parameterised queries & HTTPS fixes\\
+File upload & type/size validate; scan; isolate & ordinary text sanitise enough\\
+\bottomrule
+\end{tabularx}
+
+\h{Network / Software Bugs}
+SYN flood: TCP handshake abuse; many SYNs no completion; availability. Heartbleed: memory disclosure from trusting length; confidentiality; may expose private key/tokens/password fragments. Static analysis: code, no run; false positives. Dynamic: run with inputs; misses untested paths. Symbolic: path constraints; path explosion. Tools need actionable developer UX.
+\textbf{Layers:} routers/routing/path/IP/across networks = network; TCP/UDP/ports/SYN/ACK/reliability = transport; HTTP(S)/browser/web req/app protocol = application; Wi-Fi/Ethernet/MAC frame = link.
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Protocol/analysis & Role/associated & Trap\\ \midrule
+IP & address + route; best-effort unreliable & ordered reliable delivery\\
+TCP & seq, ACK, retry, reasm.; reliable ordered & encrypts contents\\
+UDP & no built-in delivery/order/retry & guarantees packets\\
+Static & AST/CFG/code no run & runtime logging\\
+Dynamic & runtime behaviour, leaks, UAF & syntax-only\\
+Symbolic & path constraints; symbolic inputs & ignores path explosion/env model\\
+\bottomrule
+\end{tabularx}
+
+\h{Usable Security Rules}
+Secure defaults; least privilege; clear permission state; specific warning risk + safe action; usable recovery; avoid warning fatigue; ordinary users should not manage raw crypto; treat insecure workaround as design evidence; privacy/convenience trade-off explicitly.
+
+\h{Warning Answer Mini-Template}
+Risk? user decision? language specific? safe action clear? frequency/habituation? fallback/recovery? likely behaviour under stress? residual risk?
+
+\h{Project-Reusable Patterns}
+Group-work system: requirements gathering, themes, feature justification, lo-fi/hi-fi prototypes, think-aloud, auth, password hashing/salting, TLS/cert validation, E2EE, vuln demo. Justify design: user theme + security threat + chosen control + usability impact.
+
+\h{Tutorial Transformations}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+W & Skill & Exam move\\ \midrule
+2 & usability goals & classify issue; propose fix\\
+3 & interviews/themes & data $\to$ theme $\to$ req\\
+4 & persona/scenario & choose design from evidence\\
+5 & think-aloud & plan tasks; avoid leading\\
+7 & OTP/hash/key reuse & assumptions fail?\\
+8 & PKE/MAC/sign/DH & match goal to mechanism\\
+9 & rainbow/TLS & salt/cert/E2EE boundary\\
+10 & inference/SQLi/HTTPS & threat + layer + mitigation\\
+11 & XSS, SYN, Heartbleed & classify root cause/CIA\\
+\bottomrule
+\end{tabularx}
+
+\h{Scenario Answer Stems}
+\textbf{Usability:} user + goal + task barrier + affected goal + evidence/method + redesign.\\
+\textbf{Security:} asset + attacker + vuln + CIA + assumptions + mitigation + usability cost.\\
+\textbf{Trade-off:} security gain vs user burden; likely workaround; safer default; residual risk.\\
+\textbf{Method choice:} why this method fits clue words; why alternatives weaker.
+
+\h{Common Wrong Answers}
+``Looks nice'' = usability; ``encrypt passwords''; ``HTTPS = E2EE''; ``authn = authz''; ``salt secret''; ``MFA stops all phishing''; ``DH authenticates''; ``expert eval = user test''; ``field study always better''; ``logs explain why''; ``aggregate data always safe''; ``all input attacks are same''.
+
+\h{One-Line Examples}
+Cert warning clicked through $\to$ think-aloud for mental model + better warning.\\
+Wrong recipient file share $\to$ usability safety + confidentiality.\\
+Stolen password DB $\to$ salt + slow hash + MFA + TLS.\\
+Self-signed cert accepted $\to$ MITM despite HTTPS UI.\\
+Repeated MFA prompts approved $\to$ prompt fatigue usable-security failure.\\
+Aggregate salary queries overlap $\to$ inference attack.
+
+\h{Final MAQ Scan}
+For each option: definition true? assumptions stated? property correct? method fits clue words? mechanism solves that problem? usability/security side ignored? If unsure under negative marking, leave blank.
+
+\end{multicols*}
+\newpage
+\begin{center}
+\textbf{INFO2222 Boundary + Trap Page} \quad compact lookups for MAQ/scenario answers.
+\end{center}
+\vspace{-5pt}
+\begin{multicols*}{5}
+
+\h{Security Boundary Table}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Boundary & Distinction & Exam trap\\ \midrule
+Hash/encrypt & hash one-way verify; encrypt reversible w/key & ``decrypt hash''\\
+TLS/E2EE & TLS channel to server; E2EE endpoint content & HTTPS hides from server\\
+Authn/authz & verify identity; decide permission & logged in = allowed\\
+Ident/authn & claim name; prove claim & username = proof\\
+MAC/sig & shared secret; private/public proof & MAC public-verifiable\\
+Sym/asym & one shared key; keypair & ignore key distribution\\
+DH/auth DH & shared secret; also identity-bound & plain DH stops MITM\\
+Salt/key & salt public per-password; key secret & salt must be secret\\
+C/I & secrecy; tamper/correctness & encryption = integrity\\
+C/A & disclosure; service access & DoS steals data\\
+Threat/vuln/risk & cause; weakness; likelihood-impact & impact = vuln\\
+DoS/theft & availability loss; confidentiality loss & all attacks steal data\\
+Cert val/encrypt & identity binding; secrecy mechanism & encrypt w/wrong server ok\\
+PW hash/TLS & storage protection; transit protection & one replaces other\\
+MFA/phishing & extra factor; not phishing-proof & approve-prompt safe\\
+AE/encrypt-only & C+I; C only & ciphertext tamper ignored\\
+PKE/SE bulk & PKE costly; SE/AE bulk & use PKE for big files\\
+\bottomrule
+\end{tabularx}
+
+\h{Evaluation Boundary Table}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Boundary & Choose when & Trap\\ \midrule
+User test/heuristic & real users/tasks vs expert principles & expert review = user evidence\\
+Think-aloud/interview & task cognition vs reported experience & teaching during TA\\
+Experiment/user test & causal compare vs find task issues & DV as IV\\
+Field/lab & natural context vs control & field always better\\
+Cog walkthrough/heuristic & first-use steps vs broad principles & just browse app\\
+Inspection/user test & expert check vs behaviour evidence & no users = proved usable\\
+Analytics/user study & log patterns vs why/mental model & logs explain motives\\
+Qual/quant & themes vs measures & qualitative = weak\\
+Formative/summative & improve during design vs final judgement & only test at end\\
+Lo-fi/hi-fi & early concept vs realistic detail & polished = usable\\
+\bottomrule
+\end{tabularx}
+
+\h{Attack / Vulnerability Boundary}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Issue & Cause + property & Mitigation/trap\\ \midrule
+SQLi & SQL concat; C/I/A & parameterise; HTTPS not fix\\
+XSS & unescaped output; C/I & encode; sanitise; CSP\\
+Inference & aggregate overlap; C/privacy & restrict/noise; rows hidden not enough\\
+SYN/DoS & resource exhaustion; A & filter/rate-limit; not theft\\
+Heartbleed & bounds bug; C & patch; rotate keys; not DoS\\
+Phishing/social & deceived user; auth/C/I & MFA + UX; MFA not magic\\
+Cert fail & no identity check; C/I & validate chain/host/trust\\
+OTP reuse & pad reused; C & never reuse; OTP conditions\\
+Weak PW store & fast/plain hash; C/auth & salt + slow hash\\
+Unauth DH & active MITM; C/I & auth key exchange\\
+Warn fatigue & vague frequent alerts; user error & rare actionable warnings\\
+Token theft & session secret leak; auth/C/I & cookie flags; fix XSS\\
+\bottomrule
+\end{tabularx}
+
+\h{UCD / Project / Research Boundaries}
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\toprule
+Boundary & Correct distinction & Common mistake\\ \midrule
+Goal/task & desired outcome vs action sequence & task list as user goal\\
+Theme/req & data pattern vs system need & theme = feature\\
+Req/feature & need vs implementation idea & ``cool feature'' no evidence\\
+Persona/profile & goals/tasks vs demographics & age/name only\\
+Scenario/task list & narrative in context vs steps only & no context/goal\\
+Obs/interp & what happened vs meaning & mix fact with inference\\
+Func/non-func & system does vs quality constraint & security not requirement\\
+Interview/survey & depth vs broad Qs & survey gives why\\
+Proto feedback/correctness & user response vs code works & prototype proves implementation\\
+Finding/recommendation & evidence result vs design action & jump without evidence\\
+\bottomrule
+\end{tabularx}
+
+\h{Experiment Traps}
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\toprule
+Term & Meaning / trap\\ \midrule
+IV & manipulated factor (e.g., warning design)\\
+DV & measured outcome (e.g., correct choice/time)\\
+Control var & held constant\\
+Confound & alternative explanation\\
+Within-subj & same participants all conditions; order risk\\
+Between-subj & different groups; group differences risk\\
+Counterbalance & controls order/learning effects\\
+Hypothesis & one clear comparison + one main DV; split speed and accuracy\\
+Internal val. & causal confidence\\
+External val. & generalisability\\
+t-test & know purpose only; no calculation\\
+\bottomrule
+\end{tabularx}
+
+\h{Accessibility / Situational Impairment}
+Permanent/temporary/situational impairments: visual, hearing, motor, cognitive, stress, noise, mobile, time pressure. Accessible design helps beyond disabled users. Security UI must be accessible: MFA, warnings, CAPTCHA, recovery, permission state. Avoid colour-only signals, memory-only flows, tiny targets, fine motor actions, jargon.
+
+\h{Security Warning Traps}
+Good warning = rare + specific + consequence clear + safe action clear. Bad warning = vague/frequent/technical/dismissible. False positives reduce trust. Safe default easier than risky override. Time pressure $\Rightarrow$ click-through. Habituation = repeated warning ignored.
+
+\h{Authentication Factors}
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\toprule
+Factor & Notes\\ \midrule
+Know & password/PIN; guess/phish/reuse risk\\
+Have & phone/token/security key; loss/recovery risk\\
+Are & biometric; cannot rotate like pw; privacy/accessibility\\
+MFA & combine independent factors; recovery weakest link\\
+Session token & not password, but bearer secret; protect from XSS/leak\\
+\bottomrule
+\end{tabularx}
+
+\h{TLS Key Exchange / X25519}
+Modern TLS derives session keys via authenticated key exchange. X25519/ECDHE = key agreement, not bulk encryption. Bulk data uses symmetric AE (e.g., AES-GCM/ChaCha20-Poly1305). Forward secrecy = past sessions safe if long-term key later leaks. Cert validation binds server identity to key. Disable validation $\Rightarrow$ MITM.
+
+\h{User Study Ethics}
+Consent; purpose; voluntary participation; privacy; anonymisation; avoid harm; collect only needed data; allow withdrawal; secure notes/transcripts; separate observation from interpretation. Human participants + research data + publication $\to$ ethics approval; still if anonymised/no audio-video. Anon lowers risk, not requirement.
+
+\h{Req / Feature Justification}
+Functional req = what system does. Non-functional req = quality/security/usability constraint. Strong chain: evidence/theme $\to$ user goal $\to$ requirement $\to$ feature $\to$ benefit $\to$ evaluation method. Weak: feature because modern/cool/AI-generated/pretty.
+
+\h{Failure Pattern Map}
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\toprule
+Failure & Reasoning / fix\\ \midrule
+Weak PW store & stolen DB $\to$ offline guessing $\to$ salt+slow hash\\
+Cert val off & MITM $\to$ validate chain/host/trust\\
+OTP reuse & ciphertext relation leak $\to$ never reuse pad\\
+Unauth DH & MITM $\to$ authenticate exchange\\
+Bad DH generator & small subgroup risk $\to$ safe params\\
+SQL concat & SQLi $\to$ parameterised queries\\
+Unescaped output & XSS $\to$ contextual encoding/CSP\\
+Aggregate overlap & inference $\to$ audit/noise/restrict\\
+Vague warnings & habituation $\to$ rare/actionable alerts\\
+Strict security & workaround $\to$ usable secure defaults\\
+\bottomrule
+\end{tabularx}
+
+\h{Scenario Mini-Templates}
+\textbf{Usability eval:} goal $\to$ users $\to$ task $\to$ method $\to$ data/metric $\to$ finding $\to$ design change.\\
+\textbf{Security:} asset $\to$ attacker $\to$ threat $\to$ vuln $\to$ CIA $\to$ mitigation $\to$ assumption $\to$ residual risk.\\
+\textbf{Trade-off:} security benefit $\to$ user burden $\to$ likely workaround $\to$ reduce burden $\to$ residual risk.\\
+\textbf{Project/report:} interview evidence $\to$ theme $\to$ requirement $\to$ feature $\to$ risk/control $\to$ evaluation evidence.\\
+\textbf{MAQ check:} true under stated assumptions? always/sometimes? mechanism vs goal? scenario-specific?
+
+\h{Clue Words}
+``Why did user choose?'' = think-aloud/interview. ``Can users complete task?'' = usability test. ``Which design causes better outcome?'' = experiment. ``Real-world context?'' = field. ``Expert/no users/quick?'' = heuristic/inspection. ``First-time discover?'' = cognitive walkthrough. ``Logs/frequency?'' = analytics.
+
+\h{High-Yield Last Checks}
+Security control must match threat. Usability issue must match user/task/context. Every mitigation has assumptions and residual risk. Every security feature has user cost. Negative marking: select only if boundary is clear.
+
+\end{multicols*}
+\end{document}
